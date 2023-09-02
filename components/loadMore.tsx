@@ -1,6 +1,6 @@
 "use client";
 import * as React from "react";
-import { Button } from "./ui/button";
+import { ButtonScroll } from "./ui/buttonscroll";
 import { Switch } from "./ui/switch";
 import { Label } from "./ui/label";
 import { Card } from "./ui/card";
@@ -80,7 +80,7 @@ const LoadMore = <T extends string | number = any>({
 
   return (
     <>
-      <div className="fixed container top-4 z-50 flex justify-end">
+      {/* <div className="fixed container top-4 z-50 flex justify-end">
         <Label htmlFor="scrollLoad" className="cursor-pointer">
           <Card className="w-max flex p-4 gap-4 items-center m-2">
             <Switch
@@ -91,12 +91,12 @@ const LoadMore = <T extends string | number = any>({
             <span>Fetch on scroll</span>
           </Card>
         </Label>
-      </div>
+      </div> */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 pt-12 relative">
         {children}
         {loadMoreNodes}
       </div>
-      <Button
+      <ButtonScroll
         variant="outline"
         size="lg"
         ref={ref}
@@ -104,7 +104,7 @@ const LoadMore = <T extends string | number = any>({
         onClick={() => loadMore()}
       >
         {loading ? "Loading..." : "Load More"}
-      </Button>
+      </ButtonScroll>
     </>
   );
 };

@@ -70,7 +70,7 @@ export default async function Home() {
 
       <div className="flex flex-col gap-4 items-center">
         <LoadMore loadMoreAction={loadMorePokemon} initialOffset={PAGE_SIZE}>
-          {/* @ts-expect-error async RSC */}
+          @ts-expect-error async RSC
           <PokemonList pokemon={initialPokemon} />
         </LoadMore>
       </div>
